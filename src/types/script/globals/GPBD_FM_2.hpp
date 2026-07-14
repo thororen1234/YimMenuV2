@@ -124,10 +124,10 @@ struct GPBD_FM_2_Entry
 	SCR_VEC3 CoronaPosition;                           // 40
 	GANGOPS_DATA GangopsData;                          // 43
 	RANDOM_EVENTS_CLIENT_DATA RandomEventsClientData;  // 82
-	SALVAGE_YARD_VEHICLE_SALE_DATA SYVehSaleData;      // 158 added b889g9
-	uint64_t PAD_0210[105];
+	SALVAGE_YARD_VEHICLE_SALE_DATA SYVehSaleData;      // 158
+	uint64_t PAD_0210[111];
 };
-static_assert(sizeof(GPBD_FM_2_Entry) == 315 * 8);
+static_assert(sizeof(GPBD_FM_2_Entry) == 321 * 8);
 
 struct GPBD_FM_2
 {
@@ -135,4 +135,4 @@ struct GPBD_FM_2
 
 	static GPBD_FM_2* Get();
 };
-static_assert(sizeof(GPBD_FM_2) == 10081 * 8);
+static_assert(sizeof(GPBD_FM_2) == 10273 * 8);
