@@ -101,6 +101,7 @@ namespace YimMenu::Submenus
 
 		chat->AddItem(std::make_shared<BoolCommandItem>("clearchat"_J));
 
+		gui->AddItem(std::make_shared<CommandItem>("unloadmenu"_J));
 		game->AddItem(playerEsp);
 		game->AddItem(pedEsp);
 		game->AddItem(objectEsp);

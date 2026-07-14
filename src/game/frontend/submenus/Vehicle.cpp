@@ -21,6 +21,9 @@ namespace YimMenu::Submenus
 		globals->AddItem(std::make_shared<BoolCommandItem>("hornboost"_J));
 		globals->AddItem(std::make_shared<BoolCommandItem>("modifyboostbehavior"_J));
 		globals->AddItem(std::make_shared<ConditionalItem>("modifyboostbehavior"_J, std::make_shared<ListCommandItem>("boostbehavior"_J)));
+		globals->AddItem(std::make_shared<BoolCommandItem>("autodrive"_J));
+		globals->AddItem(std::make_shared<ConditionalItem>("autodrive"_J, std::make_shared<IntCommandItem>("autodrivespeed"_J)));
+		globals->AddItem(std::make_shared<ConditionalItem>("autodrive"_J, std::make_shared<ListCommandItem>("autodrivestyle"_J)));
 
 		tools->AddItem(std::make_shared<CommandItem>("enterlastvehicle"_J));
 		tools->AddItem(std::make_shared<CommandItem>("repairvehicle"_J));
@@ -32,6 +35,12 @@ namespace YimMenu::Submenus
 
 		misc->AddItem(std::make_shared<BoolCommandItem>("speedometer"_J));
 		misc->AddItem(std::make_shared<BoolCommandItem>("seatbelt"_J));
+		misc->AddItem(std::make_shared<BoolCommandItem>("rainbowpaint"_J, "Rainbow Paint"));
+		misc->AddItem(std::make_shared<ConditionalItem>("rainbowpaint"_J, std::make_shared<ListCommandItem>("rainbowtype"_J, "Paint Type")));
+		misc->AddItem(std::make_shared<ConditionalItem>("rainbowpaint"_J, std::make_shared<BoolCommandItem>("rainbowpri"_J, "Primary")));    // do we even need this?
+		misc->AddItem(std::make_shared<ConditionalItem>("rainbowpaint"_J, std::make_shared<BoolCommandItem>("rainbowsec"_J, "Secondary")));
+		misc->AddItem(std::make_shared<ConditionalItem>("rainbowpaint"_J, std::make_shared<IntCommandItem>("rainbowspeed"_J, "Speed")));
+		misc->AddItem(std::make_shared<BoolCommandItem>("vehjump"_J, "Vehicle Jump"));
 		misc->AddItem(std::make_shared<BoolCommandItem>("lowervehiclestance"_J, "Lower Stance"));
 		misc->AddItem(std::make_shared<BoolCommandItem>("allowhatsinvehicles"_J));
 		misc->AddItem(std::make_shared<BoolCommandItem>("lsccustomsbypass"_J));
